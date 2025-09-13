@@ -2,7 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import {
+  ArrowDown,
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  Twitter,
+} from "lucide-react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 
@@ -86,7 +93,7 @@ export default function Hero() {
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
             <Link
-              href="https://github.com/smahir08"
+              href="https://github.com/raflinaufal"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -101,7 +108,7 @@ export default function Hero() {
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
             <Link
-              href="https://linkedin.com/in/syed-mahir-088abc"
+              href="https://www.linkedin.com/in/rafli-naufal-alief-5a1518257/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -115,7 +122,7 @@ export default function Hero() {
             asChild
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
-            <Link href="mailto:smsajad18@gmail.com">
+            <Link href="raflinaufalalief204@gmail.com">
               <Mail className="w-5 h-5" />
               <span className="sr-only">Email</span>
             </Link>
@@ -127,12 +134,12 @@ export default function Hero() {
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
             <Link
-              href="https://twitter.com/smahir08"
+              href="https://www.instagram.com/stories/raflinaufal21/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter className="w-5 h-5" />
-              <span className="sr-only">Twitter</span>
+              <Instagram className="w-5 h-5" />
+              <span className="sr-only">Instagram</span>
             </Link>
           </Button>
         </motion.div>
