@@ -10,7 +10,7 @@ export default function Experience() {
       title: "IT Programmer",
       company: "PT. Multi Artha Prima Sejahtera",
       location: "Jakarta, Indonesia",
-      period: "November 2024 - Febuari 2025",
+      period: "November 2024 - February 2025",
       description: [
         "Developed internal web applications to support company operations using CodeIgniter 3, React.js (TSX), Node.js, Express, and MySQL.",
         "Designed and implemented responsive user interfaces with React.js and TypeScript for better maintainability.",
@@ -23,7 +23,7 @@ export default function Experience() {
       title: "Web Developer Intern",
       company: "PT. Matra Kosala Digdaya",
       location: "Jakarta, Indonesia",
-      period: "Oktober 2024 - Desember 2024",
+      period: "October 2024 - December 2024",
       description: [
         "Developed an e-commerce website for material trading using Next.js.",
         "Built and designed a responsive company profile website to showcase services and portfolio.",
@@ -34,7 +34,7 @@ export default function Experience() {
       title: "Frontend Developer",
       company: "Futura Property",
       location: "Jakarta, Indonesia",
-      period: "Desember 2022 - November 2023",
+      period: "December 2022 - November 2023",
       description: [
         "Developed a real estate website for property buying and selling using Next.js.",
         "Focused on building clean, efficient, and user-friendly frontend features.",
