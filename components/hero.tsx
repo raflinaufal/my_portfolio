@@ -73,7 +73,9 @@ export default function Hero() {
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           <Button asChild size="lg" className="rounded-full">
-            <Link href="#contact">Download CV</Link>
+            <Link href="/cv_rafli.pdf" download>
+              Download CV
+            </Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-full">
             <Link href="#projects">View Projects</Link>
