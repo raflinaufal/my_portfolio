@@ -136,7 +136,7 @@ export default function Hero() {
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
             <Link
-              href="https://www.instagram.com/stories/raflinaufal21/"
+              href="https://www.instagram.com/raflinaufal21/"
               target="_blank"
               rel="noopener noreferrer"
             >
