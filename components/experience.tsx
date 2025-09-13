@@ -1,53 +1,65 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Briefcase, Calendar } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Briefcase, Calendar } from "lucide-react";
 
 export default function Experience() {
   const experiences = [
     {
-      title: "Data Science Intern",
-      company: "Recimotech Solutions",
-      location: "Remote",
-      period: "June 2024 - August 2024",
+      title: "IT Programmer",
+      company: "PT. Multi Artha Prima Sejahtera",
+      location: "Jakarta, Indonesia",
+      period: "November 2024 - Febuari 2025",
       description: [
-        "Completed a comprehensive course in Data Science, acquiring skills in data analysis, visualization, and machine learning techniques.",
-        "Utilized Python libraries like Pandas, NumPy, and Matplotlib for data manipulation and visualization.",
-        "Conducted exploratory data analysis (EDA) to uncover trends, supporting data-driven decision-making.",
-        "Developed machine learning models with Scikit-learn for classification, regression, and clustering tasks.",
-        "Presented findings through clear visualizations and reports.",
+        "Developed internal web applications to support company operations using CodeIgniter 3, React.js (TSX), Node.js, Express, and MySQL.",
+        "Designed and implemented responsive user interfaces with React.js and TypeScript for better maintainability.",
+        "Built and optimized RESTful APIs with Node.js and Express to handle backend processes.",
+        "Integrated MySQL database for data storage, retrieval, and management to ensure system reliability.",
+        "Focused on delivering secure, efficient, and user-friendly solutions tailored for internal company needs.",
       ],
     },
     {
-      title: "Web Development Intern",
-      company: "NIT Srinagar",
-      location: "Srinagar, J&K",
-      period: "June 2023 - July 2023",
+      title: "Web Developer Intern",
+      company: "PT. Matra Kosala Digdaya",
+      location: "Jakarta, Indonesia",
+      period: "Oktober 2024 - Desember 2024",
       description: [
-        "Developed responsive web applications using HTML, CSS, and JavaScript.",
-        "Collaborated with a team to enhance user interface design and usability.",
+        "Developed an e-commerce website for material trading using Next.js.",
+        "Built and designed a responsive company profile website to showcase services and portfolio.",
+        "Collaborated with the team to ensure seamless user experience and functionality.",
       ],
     },
-  ]
+    {
+      title: "Frontend Developer",
+      company: "Futura Property",
+      location: "Jakarta, Indonesia",
+      period: "Desember 2022 - November 2023",
+      description: [
+        "Developed a real estate website for property buying and selling using Next.js.",
+        "Focused on building clean, efficient, and user-friendly frontend features.",
+        "Collaborated with backend developers to integrate APIs and ensure seamless functionality.",
+      ],
+    },
+  ];
 
   return (
     <section id="experience" className="py-20">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
             Work <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
+          <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-500"></div>
         </motion.div>
 
-        <div className="space-y-8 max-w-3xl mx-auto">
+        <div className="max-w-6xl px-4 mx-auto space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -56,27 +68,27 @@ export default function Experience() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="card-hover border-l-4 border-l-primary">
+              <Card className="border-l-4 card-hover border-l-primary">
                 <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                  <div className="flex flex-col justify-between mb-4 md:flex-row md:items-center">
                     <div>
                       <h3 className="text-xl font-bold">{exp.title}</h3>
-                      <div className="flex items-center text-foreground/70 mt-1">
-                        <Briefcase className="h-4 w-4 mr-2" />
+                      <div className="flex items-center mt-1 text-foreground/70">
+                        <Briefcase className="w-4 h-4 mr-2" />
                         <span>{exp.company}</span>
                         <span className="mx-2">•</span>
                         <span>{exp.location}</span>
                       </div>
                     </div>
                     <div className="flex items-center mt-2 md:mt-0 text-foreground/70">
-                      <Calendar className="h-4 w-4 mr-2" />
+                      <Calendar className="w-4 h-4 mr-2" />
                       <span>{exp.period}</span>
                     </div>
                   </div>
-                  <ul className="space-y-2 mt-4">
+                  <ul className="mt-4 space-y-2">
                     {exp.description.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-primary mr-2">•</span>
+                        <span className="mr-2 text-primary">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -88,6 +100,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

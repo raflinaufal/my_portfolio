@@ -19,7 +19,7 @@ export default function Hero() {
       id="home"
       className="flex items-center justify-center min-h-screen pt-16 overflow-hidden"
     >
-      <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
+      <div className="container flex flex-col items-center max-w-6xl px-4 py-12 mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-4 text-4xl font-bold md:text-6xl"
+          className="mb-4 text-4xl font-bold md:text-5xl"
         >
           Hi, I'm{" "}
           <span className="font-extrabold gradient-text">
