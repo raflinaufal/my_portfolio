@@ -1,119 +1,136 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Code, Database, Globe, Terminal, Cpu, Braces } from "lucide-react"
+import { motion } from "framer-motion";
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      category: "Programming",
-      icon: <Code className="h-6 w-6" />,
-      skills: [
-        { name: "Python", level: 85 },
-        { name: "Java", level: 75 },
-        { name: "SQL", level: 80 },
-        { name: "Shell Programming", level: 70 },
-      ],
-    },
-    {
-      category: "Web Development",
-      icon: <Globe className="h-6 w-6" />,
-      skills: [
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "JavaScript", level: 80 },
-        { name: "React.js", level: 75 },
-      ],
-    },
-    {
-      category: "Database Management",
-      icon: <Database className="h-6 w-6" />,
-      skills: [
-        { name: "DBMS", level: 80 },
-        { name: "SQL", level: 85 },
-      ],
-    },
-    {
-      category: "Other Tools",
-      icon: <Terminal className="h-6 w-6" />,
-      skills: [
-        { name: "Shell Scripting", level: 70 },
-        { name: "VMware", level: 65 },
-        { name: "Git & GitHub", level: 80 },
-      ],
-    },
-    {
-      category: "Libraries",
-      icon: <Braces className="h-6 w-6" />,
-      skills: [
-        { name: "NumPy", level: 80 },
-        { name: "Pandas", level: 85 },
-        { name: "Matplotlib", level: 75 },
-      ],
-    },
-    {
-      category: "AI Tools",
-      icon: <Cpu className="h-6 w-6" />,
-      skills: [
-        { name: "Prompt Engineering", level: 90 },
-        { name: "GPT", level: 85 },
-        { name: "Claude", level: 80 },
-        { name: "Replit", level: 75 },
-      ],
-    },
-  ]
+  const topLaneSkills = [
+    { name: "TailwindCSS", color: "bg-cyan-500", textColor: "text-white" },
+    { name: "Bootstrap", color: "bg-purple-600", textColor: "text-white" },
+    { name: "React Query", color: "bg-red-500", textColor: "text-white" },
+    { name: "React.js", color: "bg-blue-400", textColor: "text-white" },
+    { name: "SASS", color: "bg-pink-500", textColor: "text-white" },
+    { name: "PostgreSQL", color: "bg-blue-600", textColor: "text-white" },
+    { name: "JavaScript", color: "bg-yellow-400", textColor: "text-black" },
+  ];
+
+  const bottomLaneSkills = [
+    { name: "PHP", color: "bg-indigo-600", textColor: "text-white" },
+    { name: "Material UI", color: "bg-blue-500", textColor: "text-white" },
+    { name: "JavaScript", color: "bg-yellow-400", textColor: "text-black" },
+    { name: "React.js", color: "bg-blue-400", textColor: "text-white" },
+    { name: "Firebase", color: "bg-orange-500", textColor: "text-white" },
+    { name: "Gulp", color: "bg-red-600", textColor: "text-white" },
+    { name: "Express.js", color: "bg-gray-700", textColor: "text-white" },
+  ];
+
+  const duplicatedTopSkills = [
+    ...topLaneSkills,
+    ...topLaneSkills,
+    ...topLaneSkills,
+    ...topLaneSkills,
+  ];
+  const duplicatedBottomSkills = [
+    ...bottomLaneSkills,
+    ...bottomLaneSkills,
+    ...bottomLaneSkills,
+    ...bottomLaneSkills,
+  ];
 
   return (
-    <section id="skills" className="py-20 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Technical <span className="gradient-text">Skills</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
-        </motion.div>
+    <section className="container max-w-6xl px-4 py-20 mx-auto overflow-hidden">
+      <div className="container max-w-6xl px-4 mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              Technical <span className="gradient-text">Skills</span>
+            </h2>
+            <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-500"></div>
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
+              Expertise across multiple domains of technology and development
+            </p>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
+        {/* Skills Lanes */}
+        <div className="relative space-y-8">
+          {/* Top Lane - Left to Right */}
+          <div className="relative">
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex gap-6 w-max"
+              animate={{
+                x: [0, `-${100 / 4}%`],
+              }}
+              transition={{
+                x: {
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "loop",
+                  duration: 50,
+                  ease: "linear",
+                },
+              }}
             >
-              <Card className="h-full card-hover">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-6">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-3">{category.icon}</div>
-                    <h3 className="text-xl font-bold">{category.category}</h3>
+              {duplicatedTopSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="flex-shrink-0"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <div
+                    className={`px-6 py-3 rounded-full ${skill.color} ${skill.textColor} font-medium text-sm whitespace-nowrap shadow-lg hover:shadow-xl transition-all duration-300`}
+                  >
+                    {skill.name}
                   </div>
-                  <div className="space-y-4">
-                    {category.skills.map((skill, i) => (
-                      <div key={i}>
-                        <div className="flex justify-between mb-1">
-                          <span className="font-medium">{skill.name}</span>
-                          <span className="text-foreground/70">{skill.level}%</span>
-                        </div>
-                        <Progress value={skill.level} className="h-2" />
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Bottom Lane - Right to Left */}
+          <div className="relative">
+            <motion.div
+              className="flex gap-6 w-max"
+              animate={{
+                x: [`-${100 / 4}%`, 0],
+              }}
+              transition={{
+                x: {
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "loop",
+                  duration: 50,
+                  ease: "linear",
+                },
+              }}
+            >
+              {duplicatedBottomSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="flex-shrink-0"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <div
+                    className={`px-6 py-3 rounded-full ${skill.color} ${skill.textColor} font-medium text-sm whitespace-nowrap shadow-lg hover:shadow-xl transition-all duration-300`}
+                  >
+                    {skill.name}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
