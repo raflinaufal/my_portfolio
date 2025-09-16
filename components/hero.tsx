@@ -124,7 +124,7 @@ export default function Hero() {
             asChild
             className="rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90"
           >
-            <Link href="raflinaufalalief204@gmail.com">
+            <Link href="mailto:raflinaufalalief204@gmail.com">
               <Mail className="w-5 h-5" />
               <span className="sr-only">Email</span>
             </Link>

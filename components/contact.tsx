@@ -1,72 +1,75 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Mail, Phone, Send } from "lucide-react"
-import { useToast } from "@/components/ui/use-toast"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Contact() {
-  const { toast } = useToast()
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon.",
-    })
+    });
 
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
-    })
-    setIsSubmitting(false)
-  }
+    });
+    setIsSubmitting(false);
+  };
 
   return (
     <section id="contact" className="py-20 bg-secondary/50">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-foreground/80 max-w-2xl mx-auto">
-            Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.
+          <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-500"></div>
+          <p className="max-w-2xl mx-auto text-foreground/80">
+            Feel free to reach out to me for any questions or opportunities.
+            I'll get back to you as soon as possible.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid max-w-6xl grid-cols-1 gap-8 px-4 mx-auto lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,42 +78,48 @@ export default function Contact() {
           >
             <Card className="h-full">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="mb-6 text-2xl font-bold">Contact Information</h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-                      <MapPin className="h-6 w-6" />
+                    <div className="p-3 mr-4 rounded-full bg-primary/10 text-primary">
+                      <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Location</h4>
-                      <p className="text-foreground/80">Sumbal, Bandipora (JK), 193501</p>
+                      <h4 className="text-lg font-semibold">Location</h4>
+                      <p className="text-foreground/80">Jakarta , Indonesia</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-                      <Mail className="h-6 w-6" />
+                    <div className="p-3 mr-4 rounded-full bg-primary/10 text-primary">
+                      <Mail className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Email</h4>
+                      <h4 className="text-lg font-semibold">Email</h4>
                       <p className="text-foreground/80">
-                        <a href="mailto:smsajad18@gmail.com" className="hover:text-primary transition-colors">
-                          smsajad18@gmail.com
+                        <a
+                          href="mailto:raflinaufalalief204@gmail.com"
+                          className="transition-colors hover:text-primary"
+                        >
+                          raflinaufalalief204@gmail.com
                         </a>
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mr-4">
-                      <Phone className="h-6 w-6" />
+                    <div className="p-3 mr-4 rounded-full bg-primary/10 text-primary">
+                      <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Phone</h4>
+                      <h4 className="text-lg font-semibold">Phone</h4>
                       <p className="text-foreground/80">
-                        <a href="tel:+916005921817" className="hover:text-primary transition-colors">
-                          +91 6005921817
+                        <a
+                          href="tel:+6285648355728"
+                          className="transition-colors hover:text-primary"
+                        >
+                          +62 85648355728
                         </a>
                       </p>
                     </div>
@@ -119,14 +128,14 @@ export default function Contact() {
 
                 <div className="mt-8">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26511.15189453565!2d74.6233!3d34.2833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f9c7d6b5a53%3A0x4a0d6baeac630c8d!2sSumbal%2C%20Jammu%20and%20Kashmir!5e0!3m2!1sen!2sin!4v1625123456789!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d20576.70273951313!2d106.73836705833155!3d-6.1706470170261065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sid!2sid!4v1758020824876!5m2!1sid!2sid"
                     width="100%"
                     height="200"
                     style={{ border: 0, borderRadius: "0.5rem" }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Sumbal, Bandipora Map"
+                    title="Jakarta, Indonesia"
                   ></iframe>
                 </div>
               </CardContent>
@@ -141,7 +150,7 @@ export default function Contact() {
           >
             <Card className="h-full">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+                <h3 className="mb-6 text-2xl font-bold">Send Me a Message</h3>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -191,11 +200,15 @@ export default function Contact() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <span className="flex items-center">
                         <svg
-                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                          className="w-4 h-4 mr-2 -ml-1 text-white animate-spin"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -218,7 +231,7 @@ export default function Contact() {
                       </span>
                     ) : (
                       <span className="flex items-center">
-                        <Send className="mr-2 h-4 w-4" />
+                        <Send className="w-4 h-4 mr-2" />
                         Send Message
                       </span>
                     )}
@@ -230,6 +243,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
