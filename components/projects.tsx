@@ -4,49 +4,155 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Eye } from "lucide-react";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Projects() {
   const projects = [
     {
-      title: "University Website AI Powered Chatbot",
+      title: "QR Code-Based Attendance System",
       description:
-        "Final year project. The chatbot is for the university website mostly used for the frequently asked questions. It does work easy for the visitors as well as for the administration.",
+        "A web-based system where students check in by scanning QR codes. Features include authentication, admin/teacher dashboard, and exportable attendance reports.",
       technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React.js",
-        "Python",
-        "ML",
-        "NLP",
-        "JSON",
+        "React (TypeScript / .tsx)",
+        "Redux Toolkit",
+        "React Strap",
+        "Express.js",
+        "MySQL",
+        "QR Code",
+        "JWT",
       ],
       demoLink: "#",
       githubLink: "#",
     },
     {
-      title: "Power BI Dashboard",
+      title: "Electricity Payment System",
       description:
-        "Developed a Power BI dashboard analyzing sales, revenue, and customer demographics for a hypothetical business scenario.",
-      technologies: ["Power BI", "Data Analytics", "Data Visualization"],
+        "A responsive fullstack web app for managing electricity bills with admin and customer dashboards, built using Next.js, TypeScript, Prisma, MySQL, Tailwind CSS, and Shadcn UI.",
+      technologies: [
+        "Next.js (TypeScript / .tsx)",
+        "Prisma ORM",
+        "MySQL",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "JWT Authentication",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
     {
-      title: "Food Company Website",
+      title: "Netflix Clone (React + Vite)",
       description:
-        "Developed a food company website that allows users to order food online, advance booking in restaurants. Moreover it also has a feature to book mess facility for hostels, provides dashboard features to those who avail it.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+        "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
+      technologies: [
+        "React (JavaScript / .jsx)",
+        "Vite",
+        "OMDb / IMDb-style API (movie data)",
+        "React Router",
+        "Axios",
+        "Tailwind CSS",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
     {
-      title: "Kampus Kart",
+      title: "Travel Website (Detik.com Inspired)",
       description:
-        "E-commerce site for ordering utilities within a university campus.",
-      technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+        "Converted a Figma design into a fully responsive travel website using HTML, CSS, and JavaScript. The project replicates Detik.com style with clean layout, modern UI, and interactive elements.",
+      technologies: [
+        "Figma (UI Design)",
+        "HTML5",
+        "CSS3 (Flexbox & Grid)",
+        "JavaScript (ES6+)",
+        "Responsive Design",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Vehicle Detection & Tracking (YOLOv8)",
+      description:
+        "A Python-based system that processes input video files to detect, track, and count vehicles while estimating their speed using YOLOv8 and computer vision techniques. The output video includes bounding boxes and speed annotations.",
+      technologies: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "NumPy"],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Library Booking System",
+      description:
+        "A web-based library booking and management system built with CodeIgniter 3 and MySQL. Features include user authentication, online book reservations, borrowing and returning system, and admin dashboard powered by SB Admin template.",
+      technologies: [
+        "CodeIgniter 3",
+        "MySQL",
+        "Bootstrap 4",
+        "SB Admin Template",
+        "PHP",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Point of Sale System (Nasi Goreng)",
+      description:
+        "A cashier system for managing orders and sales at a fried rice food stall. Built with CodeIgniter 3, MySQL, and Bootstrap using the SB Admin template. Features include order management, transaction processing, sales reporting, and an admin dashboard.",
+      technologies: [
+        "CodeIgniter 3",
+        "MySQL",
+        "Bootstrap 4",
+        "SB Admin Template",
+        "PHP",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Company Profile Website",
+      description:
+        "Implementation of a modern company profile website based on existing UI/UX design. Developed using Next.js and TypeScript with full responsiveness, clean component structure, and SEO optimization.",
+      technologies: [
+        "Next.js (TypeScript / .tsx)",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Framer Motion",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Real Estate Marketplace Website",
+      description:
+        "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
+      technologies: [
+        "Next.js (JSX)",
+        "React.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Framer Motion",
+        "SEO Optimization",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Real Estate Marketplace Website",
+      description:
+        "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
+      technologies: [
+        "Next.js (JSX)",
+        "React.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Framer Motion",
+        "SEO Optimization",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
@@ -68,63 +174,68 @@ export default function Projects() {
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-500"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="h-full overflow-hidden card-hover">
-                <div className="flex items-center justify-center h-48 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
-                  <h3 className="px-4 text-2xl font-bold text-center text-white">
-                    {project.title}
-                  </h3>
-                </div>
-                <CardContent className="p-6">
-                  <p className="mb-4 text-foreground/80">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, i) => (
-                      <Badge
-                        key={i}
-                        variant="secondary"
-                        className="bg-secondary/70"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between p-6 pt-0">
-                  <Button asChild variant="outline" size="sm">
-                    <Link
-                      href={project.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    <Link
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel className="relative">
+          <CarouselContent className="-ml-2">
+            {projects.map((project, index) => (
+              <CarouselItem key={index} className="md:basis-1/2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full overflow-hidden card-hover">
+                    <div className="flex items-center justify-center h-48 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
+                      <h3 className="px-4 text-2xl font-bold text-center text-white">
+                        {project.title}
+                      </h3>
+                    </div>
+                    <CardContent className="p-4">
+                      <p className="mb-4 text-foreground/80">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech, i) => (
+                          <Badge
+                            key={i}
+                            variant="secondary"
+                            className="bg-secondary/70"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter className="flex justify-between p-6 pt-0">
+                      <Button asChild variant="outline" size="sm">
+                        <Link
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Demo
+                        </Link>
+                      </Button>
+                      <Button asChild variant="outline" size="sm">
+                        <Link
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Eye className="w-4 h-4 mr-2" />
+                          Detail
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
