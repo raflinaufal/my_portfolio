@@ -11,52 +11,71 @@ import {
   BookOpen,
 } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 export default function Certifications() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
   const certifications = [
     {
-      title: "Web Development Internship",
-      organization: "NIT Srinagar",
+      title: "Cisco Certified Network Associate (CCNA)",
+      organization: "Cisco Networking Academy",
       icon: <BookOpen className="w-5 h-5" />,
       color: "from-blue-500 to-cyan-500",
-      image: "/web-development-certificate-with-html-css-javascri.jpg",
+      image: "/serticisco.png",
     },
     {
-      title: "Data Science Internship",
-      organization: "Recimotech Solutions Srinagar",
+      title: "Bootcamp Digital Marketing",
+      organization: "PT. Multi Artha Sejahtera",
       icon: <Star className="w-5 h-5" />,
       color: "from-purple-500 to-pink-500",
-      image: "/data-science-certificate-with-charts-graphs-analyt.jpg",
+      image: "/sertidm.png",
     },
     {
-      title: "Python Course",
-      organization: "DHAPPS",
+      title: "TOEFL",
+      organization: "Universitas Bina Sarana Informatika",
       icon: <Certificate className="w-5 h-5" />,
       color: "from-green-500 to-emerald-500",
-      image: "/python-programming-certificate-with-code-syntax.jpg",
+      image: "/sertitoefl.png",
     },
-    {
-      title: "Power BI Micro-Course",
-      organization: "30 days",
-      icon: <Award className="w-5 h-5" />,
-      color: "from-orange-500 to-red-500",
-      image: "/power-bi-certificate-with-dashboard-visualization.jpg",
-    },
-    {
-      title: "Data Analytics",
-      organization: "ICT Academy Founded by INFOSYS (100 hours)",
-      icon: <Trophy className="w-5 h-5" />,
-      color: "from-indigo-500 to-purple-500",
-      image: "/data-analytics-certificate-with-statistical-charts.jpg",
-    },
-    {
-      title: "Data Analytics with Tableau",
-      organization: "Jobaaj Learnings",
-      icon: <Medal className="w-5 h-5" />,
-      color: "from-teal-500 to-blue-500",
-      image: "/tableau-certificate-with-data-visualization-dashbo.jpg",
-    },
+    // {
+    //   title: "Power BI Micro-Course",
+    //   organization: "30 days",
+    //   icon: <Award className="w-5 h-5" />,
+    //   color: "from-orange-500 to-red-500",
+    //   image: "/sertifikatngoding.jpg",
+    // },
+    // {
+    //   title: "Data Analytics",
+    //   organization: "ICT Academy Founded by INFOSYS (100 hours)",
+    //   icon: <Trophy className="w-5 h-5" />,
+    //   color: "from-indigo-500 to-purple-500",
+    //   image: "/data-analytics-certificate-with-statistical-charts.jpg",
+    // },
+    // {
+    //   title: "Data Analytics with Tableau",
+    //   organization: "Jobaaj Learnings",
+    //   icon: <Medal className="w-5 h-5" />,
+    //   color: "from-teal-500 to-blue-500",
+    //   image: "/tableau-certificate-with-data-visualization-dashbo.jpg",
+    // },
   ];
+
+  useEffect(() => {
+    certifications.forEach((cert) => {
+      const img = document.createElement("img");
+      img.src = cert.image;
+    });
+  }, []);
+
+  const openLightbox = (image: string) => {
+    setCurrentImage(image);
+    setIsOpen(true);
+  };
 
   return (
     <section
@@ -102,7 +121,10 @@ export default function Certifications() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full overflow-hidden transition-all duration-300 border-0 group hover:shadow-xl bg-card/50 backdrop-blur-sm hover:bg-card/80">
+                <Card
+                  className="h-full overflow-hidden transition-all duration-300 border-0 group hover:shadow-xl bg-card/50 backdrop-blur-sm hover:bg-card/80"
+                  onClick={() => openLightbox(cert.image)}
+                >
                   <CardContent className="p-0">
                     <div className="relative w-full h-48 overflow-hidden">
                       <Image
@@ -122,8 +144,8 @@ export default function Certifications() {
                         </div>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <h4 className="mb-2 text-lg font-semibold transition-colors text-foreground group-hover:text-primary">
+                    <div className="px-2 py-4">
+                      <h4 className="mb-2 font-semibold transition-colors text-md text-foreground group-hover:text-primary">
                         {cert.title}
                       </h4>
                       <p className="text-sm leading-relaxed text-muted-foreground">
@@ -140,6 +162,13 @@ export default function Certifications() {
           </div>
         </motion.div>
       </div>
+
+      {isOpen && (
+        <Lightbox
+          mainSrc={currentImage}
+          onCloseRequest={() => setIsOpen(false)}
+        />
+      )}
     </section>
   );
 }

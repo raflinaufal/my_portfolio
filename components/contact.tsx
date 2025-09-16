@@ -15,8 +15,6 @@ export default function Contact() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,25 +26,15 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const whatsappMessage = `Hello, my name is ${formData.name}.\nMessage: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/6285648355728?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -150,7 +138,9 @@ export default function Contact() {
           >
             <Card className="h-full">
               <CardContent className="p-6">
-                <h3 className="mb-6 text-2xl font-bold">Send Me a Message</h3>
+                <h3 className="mb-6 text-2xl font-bold">
+                  Send Me a Message WhatsApp
+                </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -159,30 +149,6 @@ export default function Contact() {
                       name="name"
                       placeholder="Your Name"
                       value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="bg-background"
-                    />
-                  </div>
-
-                  <div>
-                    <Input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="bg-background"
-                    />
-                  </div>
-
-                  <div>
-                    <Input
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
-                      value={formData.subject}
                       onChange={handleChange}
                       required
                       className="bg-background"
