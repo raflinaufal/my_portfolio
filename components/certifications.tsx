@@ -12,13 +12,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export default function Certifications() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
 
   const certifications = [
     {
@@ -165,8 +164,9 @@ export default function Certifications() {
 
       {isOpen && (
         <Lightbox
-          mainSrc={currentImage}
-          onCloseRequest={() => setIsOpen(false)}
+          open={isOpen}
+          close={() => setIsOpen(false)}
+          slides={[{ src: currentImage }]}
         />
       )}
     </section>
