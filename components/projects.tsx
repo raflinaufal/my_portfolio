@@ -34,8 +34,36 @@ export default function Projects() {
         "Framer Motion",
         "SEO Optimization",
       ],
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://my-portfolio-teal-theta-nrwitbdvay.vercel.app/",
+    },
+    {
+      title: "Travel Website (Detik.com Inspired)",
+      images: ["/assets/travel.png"],
+      description:
+        "Converted a Figma design into a fully responsive travel website using HTML, CSS, and JavaScript. The project replicates Detik.com style with clean layout, modern UI, and interactive elements.",
+      technologies: [
+        "Figma (UI Design)",
+        "HTML5",
+        "CSS3 (Flexbox & Grid)",
+        "JavaScript (ES6+)",
+        "Responsive Design",
+      ],
+      demoLink: "https://tavel-html.vercel.app",
+    },
+    {
+      title: "Netflix Clone (React + Vite)",
+      images: ["/assets/movieapp.png", "/assets/loginapp.png"],
+      description:
+        "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
+      technologies: [
+        "React (JavaScript / .jsx)",
+        "Vite",
+        "OMDb / IMDb-style API (movie data)",
+        "React Router",
+        "Axios",
+        "Tailwind CSS",
+      ],
+      demoLink: "https://movie-app-sigma-gules.vercel.app",
     },
     {
       title: "QR Code-Based Attendance System",
@@ -52,7 +80,6 @@ export default function Projects() {
         "JWT",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
     {
       title: "Electricity Payment System",
@@ -69,23 +96,8 @@ export default function Projects() {
         "JWT Authentication",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
-    {
-      title: "Travel Website (Detik.com Inspired)",
-      images: ["/assets/travel.png"],
-      description:
-        "Converted a Figma design into a fully responsive travel website using HTML, CSS, and JavaScript. The project replicates Detik.com style with clean layout, modern UI, and interactive elements.",
-      technologies: [
-        "Figma (UI Design)",
-        "HTML5",
-        "CSS3 (Flexbox & Grid)",
-        "JavaScript (ES6+)",
-        "Responsive Design",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-    },
+
     {
       title: "Vehicle Detection & Tracking (YOLOv8)",
       images: ["/assets/detector.png"],
@@ -93,7 +105,6 @@ export default function Projects() {
         "A Python-based system that processes input video files to detect, track, and count vehicles while estimating their speed using YOLOv8 and computer vision techniques. The output video includes bounding boxes and speed annotations.",
       technologies: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "NumPy"],
       demoLink: "#",
-      githubLink: "#",
     },
     {
       title: "Company Profile Website",
@@ -107,7 +118,6 @@ export default function Projects() {
         "Framer Motion",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
     {
       title: "Real Estate Marketplace Website",
@@ -123,7 +133,6 @@ export default function Projects() {
         "SEO Optimization",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
     {
       title: "Real Estate Marketplace Website",
@@ -139,24 +148,8 @@ export default function Projects() {
         "SEO Optimization",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
-    {
-      title: "Netflix Clone (React + Vite)",
-      images: ["/assets/movieapp.png", "/assets/loginapp.png"],
-      description:
-        "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
-      technologies: [
-        "React (JavaScript / .jsx)",
-        "Vite",
-        "OMDb / IMDb-style API (movie data)",
-        "React Router",
-        "Axios",
-        "Tailwind CSS",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-    },
+
     {
       title: "Library Booking System",
       images: [
@@ -174,7 +167,6 @@ export default function Projects() {
         "PHP",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
     {
       title: "PPDB Online System",
@@ -193,7 +185,6 @@ export default function Projects() {
         "PHP",
       ],
       demoLink: "#",
-      githubLink: "#",
     },
   ];
 
@@ -254,26 +245,18 @@ export default function Projects() {
                       </div>
                     </CardContent>
                     <CardFooter className="flex justify-between p-6 pt-0">
-                      <Button asChild variant="outline" size="sm">
-                        <Link
-                          href={project.demoLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
-                        </Link>
-                      </Button>
-                      <Button asChild variant="outline" size="sm">
-                        <Link
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Eye className="w-4 h-4 mr-2" />
-                          Detail
-                        </Link>
-                      </Button>
+                      {project.demoLink !== "#" && (
+                        <Button asChild variant="outline" size="sm">
+                          <Link
+                            href={project.demoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Demo
+                          </Link>
+                        </Button>
+                      )}
                     </CardFooter>
                   </Card>
                 </motion.div>
