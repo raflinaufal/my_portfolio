@@ -13,12 +13,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export default function Projects() {
+  const [openLightbox, setOpenLightbox] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+
   const projects = [
     {
       title: "Web Portfolio",
-      image: "/assets/porto.png",
+      images: ["/assets/porto.png"],
       description:
         "A personal responsive portfolio website to showcase projects, skills, and experiences. Built using Next.js, TypeScript, Tailwind CSS, and Shadcn UI with smooth animations and modern design.",
       technologies: [
@@ -33,7 +39,7 @@ export default function Projects() {
     },
     {
       title: "QR Code-Based Attendance System",
-      image: "/assets/loginabsensi.png",
+      images: ["/assets/loginabsensi.png", "/assets/absensi.png"],
       description:
         "A web-based system where students check in by scanning QR codes. Features include authentication, admin/teacher dashboard, and exportable attendance reports.",
       technologies: [
@@ -50,7 +56,7 @@ export default function Projects() {
     },
     {
       title: "Electricity Payment System",
-      image: "/assets/dashboardpln.png",
+      images: ["/assets/dashboardpln.png", "/assets/loginpln.png"],
       description:
         "A responsive fullstack web app for managing electricity bills with admin and customer dashboards, built using Next.js, TypeScript, Prisma, MySQL, Tailwind CSS, and Shadcn UI.",
       technologies: [
@@ -67,7 +73,7 @@ export default function Projects() {
     },
     {
       title: "Travel Website (Detik.com Inspired)",
-      image: "/assets/travel.png",
+      images: ["/assets/travel.png"],
       description:
         "Converted a Figma design into a fully responsive travel website using HTML, CSS, and JavaScript. The project replicates Detik.com style with clean layout, modern UI, and interactive elements.",
       technologies: [
@@ -82,7 +88,7 @@ export default function Projects() {
     },
     {
       title: "Vehicle Detection & Tracking (YOLOv8)",
-      image: "/assets/detector.png",
+      images: ["/assets/detector.png"],
       description:
         "A Python-based system that processes input video files to detect, track, and count vehicles while estimating their speed using YOLOv8 and computer vision techniques. The output video includes bounding boxes and speed annotations.",
       technologies: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "NumPy"],
@@ -91,7 +97,7 @@ export default function Projects() {
     },
     {
       title: "Company Profile Website",
-      image: "/assets/matrakosala.png",
+      images: ["/assets/matrakosala.png"],
       description:
         "Implementation of a modern company profile website based on existing UI/UX design. Developed using Next.js and TypeScript with full responsiveness, clean component structure, and SEO optimization.",
       technologies: [
@@ -105,7 +111,7 @@ export default function Projects() {
     },
     {
       title: "Real Estate Marketplace Website",
-      image: "/assets/koleksiproperty.JPG",
+      images: ["/assets/koleksiproperty.JPG", "/assets/listingproperty.JPG"],
       description:
         "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
       technologies: [
@@ -121,7 +127,7 @@ export default function Projects() {
     },
     {
       title: "Real Estate Marketplace Website",
-      image: "/assets/homepunyass.JPG",
+      images: ["/assets/homepunyass.JPG", "/assets/listingpunyass.JPG"],
       description:
         "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
       technologies: [
@@ -137,7 +143,7 @@ export default function Projects() {
     },
     {
       title: "Netflix Clone (React + Vite)",
-      image: "/assets/movieapp.png",
+      images: ["/assets/movieapp.png", "/assets/loginapp.png"],
       description:
         "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
       technologies: [
@@ -153,7 +159,11 @@ export default function Projects() {
     },
     {
       title: "Library Booking System",
-      image: "/assets/pageperpus.png",
+      images: [
+        "/assets/pageperpus.png",
+        "/assets/loginperpus.png",
+        "/assets/dashboardperpus.png",
+      ],
       description:
         "A web-based library booking and management system built with CodeIgniter 3 and MySQL. Features include user authentication, online book reservations, borrowing and returning system, and admin dashboard powered by SB Admin template.",
       technologies: [
@@ -168,7 +178,11 @@ export default function Projects() {
     },
     {
       title: "PPDB Online System",
-      image: "/assets/loginppdb.png",
+      images: [
+        "/assets/homeppdb.png",
+        "/assets/loginppdb.png",
+        "/assets/dashboardppdb.png",
+      ],
       description:
         "A web-based student admission (PPDB) system developed with CodeIgniter 3 and MySQL. Features include online registration, document uploads, real-time payment verification via Midtrans API, and an admin dashboard for managing applicants and payments.",
       technologies: [
@@ -210,17 +224,18 @@ export default function Projects() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Card className="h-full overflow-hidden card-hover">
-                    <div className="relative h-48">
+                    <div
+                      className="relative h-48 cursor-pointer"
+                      onClick={() => {
+                        setLightboxImages(project.images);
+                        setOpenLightbox(true);
+                      }}
+                    >
                       <img
-                        src={project.image}
+                        src={project.images[0]}
                         alt={project.title}
                         className="object-cover w-full h-full"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center transition-opacity bg-black bg-opacity-50 opacity-0 hover:opacity-100">
-                        <h3 className="px-4 text-2xl font-bold text-center text-white">
-                          {project.title}
-                        </h3>
-                      </div>
                     </div>
                     <CardContent className="p-4">
                       <p className="mb-4 text-foreground/80">
@@ -268,6 +283,12 @@ export default function Projects() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+
+        <Lightbox
+          open={openLightbox}
+          close={() => setOpenLightbox(false)}
+          slides={lightboxImages.map((src) => ({ src }))}
+        />
       </div>
     </section>
   );
