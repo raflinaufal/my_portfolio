@@ -17,7 +17,23 @@ import {
 export default function Projects() {
   const projects = [
     {
+      title: "Web Portfolio",
+      image: "/assets/porto.png",
+      description:
+        "A personal responsive portfolio website to showcase projects, skills, and experiences. Built using Next.js, TypeScript, Tailwind CSS, and Shadcn UI with smooth animations and modern design.",
+      technologies: [
+        "Next.js (TypeScript / .tsx)",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Framer Motion",
+        "SEO Optimization",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
       title: "QR Code-Based Attendance System",
+      image: "/assets/loginabsensi.png",
       description:
         "A web-based system where students check in by scanning QR codes. Features include authentication, admin/teacher dashboard, and exportable attendance reports.",
       technologies: [
@@ -34,6 +50,7 @@ export default function Projects() {
     },
     {
       title: "Electricity Payment System",
+      image: "/assets/dashboardpln.png",
       description:
         "A responsive fullstack web app for managing electricity bills with admin and customer dashboards, built using Next.js, TypeScript, Prisma, MySQL, Tailwind CSS, and Shadcn UI.",
       technologies: [
@@ -49,22 +66,8 @@ export default function Projects() {
       githubLink: "#",
     },
     {
-      title: "Netflix Clone (React + Vite)",
-      description:
-        "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
-      technologies: [
-        "React (JavaScript / .jsx)",
-        "Vite",
-        "OMDb / IMDb-style API (movie data)",
-        "React Router",
-        "Axios",
-        "Tailwind CSS",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-    },
-    {
       title: "Travel Website (Detik.com Inspired)",
+      image: "/assets/travel.png",
       description:
         "Converted a Figma design into a fully responsive travel website using HTML, CSS, and JavaScript. The project replicates Detik.com style with clean layout, modern UI, and interactive elements.",
       technologies: [
@@ -79,6 +82,7 @@ export default function Projects() {
     },
     {
       title: "Vehicle Detection & Tracking (YOLOv8)",
+      image: "/assets/detector.png",
       description:
         "A Python-based system that processes input video files to detect, track, and count vehicles while estimating their speed using YOLOv8 and computer vision techniques. The output video includes bounding boxes and speed annotations.",
       technologies: ["Python", "YOLOv8", "OpenCV", "DeepSORT", "NumPy"],
@@ -86,35 +90,8 @@ export default function Projects() {
       githubLink: "#",
     },
     {
-      title: "Library Booking System",
-      description:
-        "A web-based library booking and management system built with CodeIgniter 3 and MySQL. Features include user authentication, online book reservations, borrowing and returning system, and admin dashboard powered by SB Admin template.",
-      technologies: [
-        "CodeIgniter 3",
-        "MySQL",
-        "Bootstrap 4",
-        "SB Admin Template",
-        "PHP",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-    },
-    {
-      title: "Point of Sale System (Nasi Goreng)",
-      description:
-        "A cashier system for managing orders and sales at a fried rice food stall. Built with CodeIgniter 3, MySQL, and Bootstrap using the SB Admin template. Features include order management, transaction processing, sales reporting, and an admin dashboard.",
-      technologies: [
-        "CodeIgniter 3",
-        "MySQL",
-        "Bootstrap 4",
-        "SB Admin Template",
-        "PHP",
-      ],
-      demoLink: "#",
-      githubLink: "#",
-    },
-    {
       title: "Company Profile Website",
+      image: "/assets/matrakosala.png",
       description:
         "Implementation of a modern company profile website based on existing UI/UX design. Developed using Next.js and TypeScript with full responsiveness, clean component structure, and SEO optimization.",
       technologies: [
@@ -128,6 +105,7 @@ export default function Projects() {
     },
     {
       title: "Real Estate Marketplace Website",
+      image: "/assets/koleksiproperty.JPG",
       description:
         "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
       technologies: [
@@ -143,6 +121,7 @@ export default function Projects() {
     },
     {
       title: "Real Estate Marketplace Website",
+      image: "/assets/homepunyass.JPG",
       description:
         "A responsive frontend real estate marketplace website built with React (JSX) and Next.js. It implements the provided UI/UX design to showcase property listings with details, images, and pricing.",
       technologies: [
@@ -152,6 +131,52 @@ export default function Projects() {
         "Shadcn UI",
         "Framer Motion",
         "SEO Optimization",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Netflix Clone (React + Vite)",
+      image: "/assets/movieapp.png",
+      description:
+        "A Netflix-style streaming UI built with React and Vite, using an IMDb-style movie API for data . Includes search, movie details, user auth, and a responsive grid layout.",
+      technologies: [
+        "React (JavaScript / .jsx)",
+        "Vite",
+        "OMDb / IMDb-style API (movie data)",
+        "React Router",
+        "Axios",
+        "Tailwind CSS",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Library Booking System",
+      image: "/assets/pageperpus.png",
+      description:
+        "A web-based library booking and management system built with CodeIgniter 3 and MySQL. Features include user authentication, online book reservations, borrowing and returning system, and admin dashboard powered by SB Admin template.",
+      technologies: [
+        "CodeIgniter 3",
+        "MySQL",
+        "Bootstrap 4",
+        "SB Admin Template",
+        "PHP",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "PPDB Online System",
+      image: "/assets/loginppdb.png",
+      description:
+        "A web-based student admission (PPDB) system developed with CodeIgniter 3 and MySQL. Features include online registration, document uploads, real-time payment verification via Midtrans API, and an admin dashboard for managing applicants and payments.",
+      technologies: [
+        "CodeIgniter 3",
+        "MySQL",
+        "Bootstrap 4",
+        "Midtrans API",
+        "PHP",
       ],
       demoLink: "#",
       githubLink: "#",
@@ -185,10 +210,17 @@ export default function Projects() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Card className="h-full overflow-hidden card-hover">
-                    <div className="flex items-center justify-center h-48 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500">
-                      <h3 className="px-4 text-2xl font-bold text-center text-white">
-                        {project.title}
-                      </h3>
+                    <div className="relative h-48">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover w-full h-full"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center transition-opacity bg-black bg-opacity-50 opacity-0 hover:opacity-100">
+                        <h3 className="px-4 text-2xl font-bold text-center text-white">
+                          {project.title}
+                        </h3>
+                      </div>
                     </div>
                     <CardContent className="p-4">
                       <p className="mb-4 text-foreground/80">

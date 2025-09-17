@@ -56,9 +56,6 @@ export default function About() {
                   <span className="text-indigo-800 bg-indigo-100 skill-pill dark:bg-indigo-900/30 dark:text-indigo-300">
                     Web Development
                   </span>
-                  <span className="skill-pill bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300">
-                    Artificial Intelligence (Machine Learning basics)
-                  </span>
                   <span className="skill-pill bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300">
                     Fullstack Development
                   </span>
