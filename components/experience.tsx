@@ -23,7 +23,7 @@ export default function Experience() {
       title: "Web Developer Intern",
       company: "PT. Matra Kosala Digdaya",
       location: "Jakarta, Indonesia",
-      period: "October 2024 - December 2024",
+      period: "August 2024 - November 2024",
       description: [
         "Developed an e-commerce website for material trading using Next.js.",
         "Built and designed a responsive company profile website to showcase services and portfolio.",
