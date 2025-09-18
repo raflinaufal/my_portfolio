@@ -39,7 +39,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-secondary/50">
-      <div className="container max-w-6xl px-4 mx-auto">
+      <div className="max-w-6xl px-4 mx-auto ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid max-w-6xl grid-cols-1 gap-8 px-4 mx-auto lg:grid-cols-2">
+        <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
