@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           <p className="text-center text-foreground/70">
-            &copy; {currentYear} Syed Mahir. All rights reserved.
+            &copy; {currentYear} Rafli Naufal Alief . All rights reserved.
           </p>
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function Header() {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container flex items-center justify-between max-w-6xl px-4 mx-auto">
+      <div className="flex items-center justify-between max-w-6xl px-4 mx-auto ">
         <Link href="#home" className="text-2xl font-bold gradient-text">
           Portfolio
         </Link>
