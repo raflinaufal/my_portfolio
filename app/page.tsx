@@ -13,7 +13,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       <ParticlesBackground />
       <div className="relative z-10">
         <Header />
