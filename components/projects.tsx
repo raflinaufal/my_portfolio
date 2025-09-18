@@ -34,7 +34,7 @@ export default function Projects() {
         "Framer Motion",
         "SEO Optimization",
       ],
-      demoLink: "https://my-portfolio-teal-theta-nrwitbdvay.vercel.app/",
+      demoLink: "https://portfoliorafli.vercel.app/",
     },
     {
       title: "Travel Website (Detik.com Inspired)",
