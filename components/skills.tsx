@@ -129,9 +129,9 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="container max-w-6xl px-4 py-20 mx-auto overflow-hidden"
+      className="max-w-6xl px-4 py-20 mx-auto overflow-hidden "
     >
-      <div className="container max-w-6xl px-4 mx-auto">
+      <div className="max-w-6xl px-4 mx-auto ">
         {/* Header */}
         <div className="mb-12">
           <motion.div

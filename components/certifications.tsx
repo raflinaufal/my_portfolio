@@ -81,7 +81,7 @@ export default function Certifications() {
       id="certifications"
       className="py-20 bg-gradient-to-br from-background via-background to-muted/20"
     >
-      <div className="container max-w-6xl px-4 mx-auto">
+      <div className="max-w-6xl px-4 mx-auto ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,10 +107,6 @@ export default function Certifications() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h3 className="flex items-center justify-center gap-3 mb-8 text-3xl font-bold text-center">
-            <Certificate className="w-8 h-8 text-primary" />
-            Professional Certifications
-          </h3>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert, index) => (
               <motion.div

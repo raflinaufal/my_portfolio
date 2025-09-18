@@ -8,7 +8,7 @@ import { Linkedin, Github, Twitter } from "lucide-react";
 export default function About() {
   return (
     <section id="about" className="py-20 bg-secondary/50">
-      <div className="container max-w-6xl px-4 mx-auto">
+      <div className="max-w-6xl px-4 mx-auto ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

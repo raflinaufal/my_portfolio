@@ -54,7 +54,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
@@ -123,3 +123,7 @@
   @apply transform scale-105;
 }
 
+/* Ensure all elements fit within the viewport */
+.container {
+  @apply max-w-full;
+}
